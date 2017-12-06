@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,14 +14,19 @@ public class Paddle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        print(Input.mousePosition.x / Screen.width * 8); //this should print in the console the position of the cursor
-        float mousePosInBlocks = (Input.mousePosition.x / Screen.width * 8) -4f;
+        print(Input.mousePosition.y / Screen.height * 8); //this should print in the console the position of the cursor
+        
+        float mousePosInBlocks = (Input.mousePosition.y / Screen.height * 8) -4.5f;
+        float mousePos = Mathf.Clamp(mousePosInBlocks, -4.1f, 4.1f);
+        //float mousePos = Mathf.Clamp(mousePosInUnits, -5.9f, 5.9f);
 
-        Vector3 paddlePosition = new Vector3(0.5f, this.transform.position.y, 0);
+        Vector3 paddlePosition = new Vector3(6f, this.transform.position.y, 0);
+
+        paddlePosition.y = mousePos;
 
         this.transform.position = paddlePosition;
 
-        paddlePosition.x = mousePosInBlocks;
+        
 
 
 

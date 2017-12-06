@@ -8,15 +8,20 @@ public class Paddler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) && this.transform.position.y <4f)
         {
-            transform.position += Vector3.up * speed * Time.deltaTime * 7;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 9f);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.S) && this.transform.position.y > -4f)
         {
-            transform.position += Vector3.down * speed * Time.deltaTime * 7;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -9f);
         }
+        else
+        {
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+        }
+        
     }
 
 

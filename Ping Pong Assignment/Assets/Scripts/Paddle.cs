@@ -14,7 +14,7 @@ public class Paddle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        print(Input.mousePosition.y / Screen.height * 8); //this should print in the console the position of the cursor
+        //print(Input.mousePosition.y / Screen.height * 8); //this should print in the console the position of the cursor
         
         float mousePosInBlocks = (Input.mousePosition.y / Screen.height * 8) -4.5f;
         float mousePos = Mathf.Clamp(mousePosInBlocks, -4.1f, 4.1f);

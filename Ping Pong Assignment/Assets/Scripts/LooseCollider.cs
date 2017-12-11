@@ -3,24 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LooseCollider : MonoBehaviour {
-    public LevelManager levelManager;
-    static int playerScoreLeft = 0;
+    private LevelManager levelManager;
+    static int playerScoreRight = 0;
 
 
-    void OnTriggerEnter2D(Collider2D collider)//this is triggered when a trigger is set
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        print("Trigger");
-        playerScoreLeft += 1;
-        print(playerScoreLeft);
-        levelManager.LoadLevel("Lose"); //loads Win Scene ball enteres trigger
-        
+        //print("Collision with: " + collision.gameObject.name);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)//this is triggered when a collision happens
+    //works when Collider is Trigger
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Collision");
-        
+        //print("Triggered with: " + collision.gameObject.name);
+        playerScoreRight += 1;
+        print("Right Player Score: " + playerScoreRight);
+        if (playerScoreRight == 3)
+        {
+            print("Right player won this round!");
+            levelManager.LoadLevel("Level2");
+        }
+        else
+            levelManager.LoadLevel("Level1");
 
-        //levelManager.LoadLevel("Lose");
+
     }
+
+    void Start()
+    {
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
+
+    }
+
+
 }

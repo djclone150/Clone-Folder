@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("pressed");
+            //Debug.Log("pressed");
             hasStarted = true;
 
         }
@@ -26,7 +26,7 @@ public class Ball : MonoBehaviour {
         if (hasStarted == true)
         {
             hasStarted = false;
-            Debug.Log("Pressed left click");
+            //Debug.Log("Pressed left click");
             if (rand == 0)
             {
                 this.GetComponent<Rigidbody2D>().velocity = new Vector2(-6f, -5f);
@@ -41,8 +41,8 @@ public class Ball : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D hit)
     {
-        float dist = this.transform.position.y - GameObject.Find("RightPaddle").transform.position.x;
-        print(dist);
+        //float dist = this.transform.position.y - GameObject.Find("RightPaddle").transform.position.x;
+        //print(dist);
         
     }
 }

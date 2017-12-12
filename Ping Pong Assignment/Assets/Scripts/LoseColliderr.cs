@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoseColliderr : MonoBehaviour {
     private LevelManager myLevelManager;
     static int playerScoreLeft = 0;
+    public Text scoreLeft;
 
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -35,5 +37,9 @@ public class LoseColliderr : MonoBehaviour {
 
     }
 
+    void Update()
+    {
+        scoreLeft.text = playerScoreLeft.ToString();
+    }
 
 }

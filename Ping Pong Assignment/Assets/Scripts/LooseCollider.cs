@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LooseCollider : MonoBehaviour {
     private LevelManager levelManager;
     static int playerScoreRight = 0;
+    public Text scoreRight;
 
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -33,6 +35,11 @@ public class LooseCollider : MonoBehaviour {
     {
         levelManager = GameObject.FindObjectOfType<LevelManager>();
 
+    }
+
+    void Update()
+    {
+        scoreRight.text = playerScoreRight.ToString();
     }
 
 

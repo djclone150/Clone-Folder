@@ -21,7 +21,7 @@ public class LooseCollider2 : MonoBehaviour
         //print("Triggered with: " + collision.gameObject.name);
         playerScoreRight += 1;
         print("Right Player Score: " + playerScoreRight);
-        if (playerScoreRight == 3)
+        if (playerScoreRight == 5)
         {
             print("Right player won this round!");
             levelManager.LoadLevel("Level3");

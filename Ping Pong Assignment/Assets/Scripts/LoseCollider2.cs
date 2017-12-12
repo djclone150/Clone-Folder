@@ -21,7 +21,7 @@ public class LoseCollider2 : MonoBehaviour
         //print("Triggered with: " + collision.gameObject.name);
         playerScoreLeft += 1;
         print("Left Player Score: " + playerScoreLeft);
-        if (playerScoreLeft == 3)
+        if (playerScoreLeft == 5)
         {
             print("Left Player has won this round!");
             myLevelManager.LoadLevel("Level3");

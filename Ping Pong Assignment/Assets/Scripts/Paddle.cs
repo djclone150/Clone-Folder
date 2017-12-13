@@ -20,7 +20,7 @@ public class Paddle : MonoBehaviour {
         float mousePos = Mathf.Clamp(mousePosInBlocks, -4.1f, 4.1f);
         //float mousePos = Mathf.Clamp(mousePosInUnits, -5.9f, 5.9f);
 
-        Vector3 paddlePosition = new Vector3(6f, this.transform.position.y, 0);
+        Vector3 paddlePosition = new Vector3(6f, this.transform.position.y, -0.3f);
 
         paddlePosition.y = mousePos;
 

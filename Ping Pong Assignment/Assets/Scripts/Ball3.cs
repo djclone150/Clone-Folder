@@ -32,11 +32,11 @@ public class Ball3 : MonoBehaviour
             //Debug.Log("Pressed left click");
             if (rand == 0)
             {
-                this.GetComponent<Rigidbody2D>().velocity = new Vector2(-10f, -5f);
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(-5f, -5f);
             }
             else if (rand == 1)
             {
-                this.GetComponent<Rigidbody2D>().velocity = new Vector2(10f, 5f);
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(5f, 5f);
             }
         }
 

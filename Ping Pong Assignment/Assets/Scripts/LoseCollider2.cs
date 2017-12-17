@@ -7,8 +7,14 @@ public class LoseCollider2 : MonoBehaviour
 {
     private LevelManager myLevelManager;
     static int playerScoreLeft = 0;
-    public Text scoreLeft;
+    public Text scoreLeft = null;
 
+    //public GameObject loseColliderRight;
+
+    //private LooseCollider otherScriptToAccess;
+
+    //private int integerrScriptTwo;
+    //private int integerScriptTwo;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,7 +29,9 @@ public class LoseCollider2 : MonoBehaviour
         print("Left Player Score: " + playerScoreLeft);
         if (playerScoreLeft == 5)
         {
-            print("Left Player has won this round!");
+            print("Red Player has won this round!");
+            playerScoreLeft = 0;
+            //PersistentManagerScript.Instance.value++;
             myLevelManager.LoadLevel("Level3");
         }
         else
@@ -35,6 +43,14 @@ public class LoseCollider2 : MonoBehaviour
     void Start()
     {
         myLevelManager = GameObject.FindObjectOfType<LevelManager>();
+
+        //otherScriptToAccess = loseColliderRight.GetComponent<LooseCollider>();
+
+        //integerrScriptTwo = otherScriptToAccess.redScoreSystem;
+        //integerScriptTwo = otherScriptToAccess.blueScoreSystem;
+
+        //Debug.Log(integerrScriptTwo);
+        //Debug.Log(integerScriptTwo);
 
     }
 

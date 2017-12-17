@@ -7,7 +7,15 @@ public class LooseCollider : MonoBehaviour {
     private LevelManager levelManager;
     static int playerScoreRight = 0;
     public Text scoreRight;
+    public Text RedScore;
+    public Text BlueScore;
 
+    static int redScore = 0;
+    static int blueScore = 0;
+
+    //public bool myBooleanVariable = false;
+    //public int redScoreSystem = 0;
+    //public int blueScoreSystem = 0;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,7 +30,10 @@ public class LooseCollider : MonoBehaviour {
         print("Right Player Score: " + playerScoreRight);
         if (playerScoreRight == 3)
         {
-            print("Right player won this round!");
+            print("Blue player won this round!");
+            playerScoreRight = 0;
+            //PersistentManagerScript.Instance.value++;
+            //blueScoreSystem++;
             levelManager.LoadLevel("Level2");
         }
         else
@@ -40,6 +51,9 @@ public class LooseCollider : MonoBehaviour {
     void Update()
     {
         scoreRight.text = playerScoreRight.ToString();
+        //RedScore.text = redScore.ToString();
+        //BlueScore.text = blueScore.ToString();
+
     }
 
 

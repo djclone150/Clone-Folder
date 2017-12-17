@@ -8,6 +8,8 @@ public class LooseCollider2 : MonoBehaviour
     private LevelManager levelManager;
     static int playerScoreRight = 0;
     public Text scoreRight;
+    public static int redScore;
+    public static int blueScore;
 
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -23,7 +25,10 @@ public class LooseCollider2 : MonoBehaviour
         print("Right Player Score: " + playerScoreRight);
         if (playerScoreRight == 5)
         {
-            print("Right player won this round!");
+            print("Blue player won this round!");
+            blueScore++;
+            playerScoreRight = 0;
+            //PersistentManagerScript.Instance.value++;
             levelManager.LoadLevel("Level3");
         }
         else

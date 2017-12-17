@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
+    //public Text valueText;
+
+    private void Start()
+    {
+        //valueText.text = PersistentManagerScript.Instance.value.ToString();
+    }
+
     public void LoadLevel(string levelName)
     {
         Debug.Log("Loading level... " + levelName);

@@ -6,8 +6,14 @@ using UnityEngine.UI;
 public class LoseColliderr : MonoBehaviour {
     private LevelManager myLevelManager;
     static int playerScoreLeft = 0;
-    public Text scoreLeft;
+    public Text scoreLeft = null;
 
+    //public GameObject loseColliderRight;
+
+    //private LooseCollider otherScriptToAccess;
+
+    //private int integerrScriptTwo;
+    //private int integerScriptTwo;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,7 +28,10 @@ public class LoseColliderr : MonoBehaviour {
         print("Left Player Score: " + playerScoreLeft);
         if (playerScoreLeft == 3)
         {
-            print("Left Player has won this round!");
+            print("Red Player has won this round!");
+            playerScoreLeft = 0;
+            //integerrScriptTwo++;
+            //PersistentManagerScript.Instance.value++;
             myLevelManager.LoadLevel("Level2");
         }
         else
@@ -32,8 +41,16 @@ public class LoseColliderr : MonoBehaviour {
     }
 
     void Start()
-    {
+    {      
         myLevelManager = GameObject.FindObjectOfType<LevelManager>();
+
+        //otherScriptToAccess = loseColliderRight.GetComponent<LooseCollider>();
+
+        //integerrScriptTwo = otherScriptToAccess.redScoreSystem;
+        //integerScriptTwo = otherScriptToAccess.blueScoreSystem;
+
+        //Debug.Log(integerrScriptTwo);
+        //Debug.Log(integerScriptTwo);
 
     }
 
